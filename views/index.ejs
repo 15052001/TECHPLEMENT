@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Quote</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Titan+One&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="styles/main.css">
+
+</head>
+
+<body>
+  <h1>Quote of the Day</h1>  
+  <div class="quote-box">
+    <% if(locals.quote) {%>
+    <div class="quote" id="quoteDisplay"><%= quote.quote %></div>
+    <div class="author" id="authorDisplay"><%= quote.author %></div>
+    <% } else{%>
+      <div class="quote" id="quoteDisplay"><%= message %></div>
+      <% } %>
+</div>
+  <div class="search-container">
+    <form id="author" method="post" action="/search">
+    <input type="text" id="searchInput" name="name" placeholder="Enter author name">
+    <button >Search</button>
+  </form>
+  </div>
+</body>
+
+</html>
